@@ -1,4 +1,4 @@
-public class ClasseGerente {
+public class Gerente {
     String atributoNome;
     String atributoCargo;
     float atributoSalario;
