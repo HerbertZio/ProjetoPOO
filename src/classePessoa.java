@@ -1,18 +1,18 @@
-public class classePessoa {
+public class ClassePessoa {
+    String atributoNome; // null
+    int atributoIdade; // 0
+    float atributoRenda; // 0.00
 
-    String atributoNome;
-    int atributoIdade;
-    float atributoRenda;
-
-    public void metodoImprimir(){
+    public void metodoImprimir() {
         System.out.println(this.atributoNome);
     }
-
-    public void metodoAlterarRenda(float parametroValorAdicional){
+    //Metodo com parâmetro (argumento)
+    public void  metodoAlterarRenda(float parametroValorAdicional){
         this.atributoRenda = this.atributoRenda + parametroValorAdicional;
+        // this.atributoRenda += parametroValorAdicional;
     }
-
     public float metodoDevolverRenda(){
+
         return (this.atributoRenda + 1000.00f);
     }
 }
