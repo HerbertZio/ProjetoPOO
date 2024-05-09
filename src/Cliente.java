@@ -1,6 +1,4 @@
-public class Cliente {
+public class Cliente extends Pessoa {
 
-    String atributoNome;
-    float atributoRenda;
     boolean atributoChequeEspecial = false;
 }

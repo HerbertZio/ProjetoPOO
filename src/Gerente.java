@@ -1,7 +1,5 @@
-public class Gerente {
-    String atributoNome;
+public class Gerente extends Pessoa{
+
     String atributoCargo;
-    float atributoSalario;
     String atributoSetor;
 }
-
