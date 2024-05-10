@@ -4,27 +4,37 @@ public class Principal {
     public static void main(String[] args) {
 
         Conta conta1 = new Conta();
-        Conta conta2 = new Conta();
 
-        conta1.metodoAlterarTudo(32, 10_000.00f, "Conta Corrente");
-        conta2.metodoAlterarTudo(7, 1_500.00f, "Conta Salário");
+        conta1.metodoAlterarTudo(1, 5000f, "Conta Poupança");
+        conta1.cliente = new Cliente();
 
-        conta1.imprimirNumero();
-        conta2.imprimirNumero();
-
-        conta1.metodoAlterarSaldo(20_000.00f);
-
+        conta1.cliente.nome = "Herbert";
+        conta1.cliente.renda = 18_000.00f;
+        conta1.cliente.alterarPessoa("Felipe", 8_000.00f);
+        conta1.cliente.imprirPessoa();
         conta1.imprimirTodos();
 
-        conta1.cliente = new Cliente();
-        conta1.cliente.atributoNome = "Jackson";
-        conta1.cliente.atributoRenda = 3_000.00f;
-        conta1.cliente.atributoChequeEspecial = true;
+//        -------------------------------------------------
 
-        Cliente cliente1 = new Cliente();
-        cliente1.atributoNome = "João";
-        cliente1.atributoRenda = 5_000f;
+        Conta conta2 = new Conta();
+        conta2.metodoAlterarTudo(2, 12000f, "Conta Salário");
+        conta2.cliente = new Cliente();
+        conta2.cliente.alterarPessoa("Gati", 3_000.00f);
+//        --------------------------------------------------
 
+        conta2.depositar(3_000.00f);
+        conta2.imprimirTodos();
+
+//        ------------------------------------------------------
+        conta2.sacar(20000f);
+        conta2.imprimirTodos();
+
+//        --------------------------------------------------------
+
+        conta2.transferencia(200f, conta2, conta1);
+        conta2.imprimirTodos();
+        conta1.imprimirTodos();
 
     }
+
 }

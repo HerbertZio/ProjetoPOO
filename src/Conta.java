@@ -3,7 +3,6 @@ public class Conta {
     int numero;
     float saldo;
     String tipo;
-
     //Composição
     Cliente cliente;
 
@@ -29,24 +28,47 @@ public class Conta {
     }
 
 
-    public void metodoAlterarNumero (int argumentoNumero){
+    public void metodoAlterarNumero(int argumentoNumero) {
         this.numero = argumentoNumero;
     }
 
-    public void metodoAlterarSaldo (float argumentoSaldo){
+    public void metodoAlterarSaldo(float argumentoSaldo) {
         this.saldo = argumentoSaldo;
     }
 
 
-    public void metodoAlterarTipo (String argumentoTipo){
+    public void metodoAlterarTipo(String argumentoTipo) {
         this.tipo = argumentoTipo;
     }
 
-    public void metodoAlterarTudo (int x, float y, String z){
+    public void metodoAlterarTudo(int x, float y, String z) {
         this.numero = x;
         this.saldo = y;
         this.tipo = z;
     }
 
+    void depositar(float valorDepositado) {
+        this.saldo = this.saldo + valorDepositado;
+//        this.saldo += valorDepositado;
+    }
+
+    void sacar(float valorSacado) {
+
+        if (valorSacado <= this.saldo) {
+            this.saldo = this.saldo - valorSacado;
+        } else {
+            System.out.println("Entrou no cheque especial!");
+        }
+    }
+
+    void transferencia(float valorTransferencia, Conta contaOrigem, Conta contaDestino) {
+        if (valorTransferencia <= contaOrigem.saldo) {
+            contaOrigem.saldo -= valorTransferencia;
+            contaDestino.saldo += valorTransferencia;
+            System.out.println("Transferência de " + valorTransferencia + " realizada com sucesso da conta " + contaOrigem.numero + " para a conta " + contaDestino.numero);
+        } else {
+            System.out.println("Saldo insuficiente para realizar a transferência.");
+        }
+    }
 
 }
